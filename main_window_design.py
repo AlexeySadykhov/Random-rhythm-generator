@@ -479,7 +479,7 @@ class Ui_TabWidget(object):
 
     def retranslateUi(self, TabWidget):
         _translate = QtCore.QCoreApplication.translate
-        TabWidget.setWindowTitle(_translate("TabWidget", "Rhythm manager"))
+        TabWidget.setWindowTitle(_translate("TabWidget", "Random rhythm generator"))
         self.rr_main_groupBox.setTitle(_translate("TabWidget", "Main"))
         self.rr_main_dur_comboBox.setItemText(0, _translate("TabWidget", "1/1"))
         self.rr_main_dur_comboBox.setItemText(1, _translate("TabWidget", "1/2"))
