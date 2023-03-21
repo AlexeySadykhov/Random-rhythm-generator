@@ -4,7 +4,7 @@ from PyQt5 import QtCore, QtWidgets
 class Ui_TabWidget(object):
     def setupUi(self, TabWidget):
         TabWidget.setObjectName("TabWidget")
-        TabWidget.setFixedSize(627, 382)
+        TabWidget.resize(627, 382)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -228,13 +228,9 @@ class Ui_TabWidget(object):
         self.ir_generate_button.setEnabled(False)
         self.ir_generate_button.setGeometry(QtCore.QRect(450, 300, 113, 32))
         self.ir_generate_button.setObjectName("ir_generate_button")
-        self.ir_create_button = QtWidgets.QPushButton(self.irregular_rhythm_tab)
-        self.ir_create_button.setEnabled(False)
-        self.ir_create_button.setGeometry(QtCore.QRect(40, 300, 113, 32))
-        self.ir_create_button.setObjectName("ir_create_button")
         self.ir_get_from_excel_button = QtWidgets.QPushButton(self.irregular_rhythm_tab)
         self.ir_get_from_excel_button.setEnabled(False)
-        self.ir_get_from_excel_button.setGeometry(QtCore.QRect(160, 300, 113, 32))
+        self.ir_get_from_excel_button.setGeometry(QtCore.QRect(40, 300, 113, 32))
         self.ir_get_from_excel_button.setObjectName("ir_get_from_excel_button")
         self.ir_operation_groupBox = QtWidgets.QGroupBox(self.irregular_rhythm_tab)
         self.ir_operation_groupBox.setGeometry(QtCore.QRect(40, 180, 151, 91))
@@ -444,35 +440,31 @@ class Ui_TabWidget(object):
 
         self.retranslateUi(TabWidget)
         TabWidget.setCurrentIndex(0)
-        self.rr_division_checkBox.clicked['bool'].connect(self.rr_division_groupBox.setEnabled)  # type: ignore
-        self.rr_rests_checkBox.clicked['bool'].connect(self.rr_rests_groupBox.setEnabled)  # type: ignore
-        self.rr_div_irreg_checkBox.clicked['bool'].connect(self.rr_special_groupBox.setEnabled)  # type: ignore
+        self.rr_division_checkBox.clicked['bool'].connect(self.rr_division_groupBox.setEnabled) # type: ignore
+        self.rr_rests_checkBox.clicked['bool'].connect(self.rr_rests_groupBox.setEnabled) # type: ignore
+        self.rr_div_irreg_checkBox.clicked['bool'].connect(self.rr_special_groupBox.setEnabled) # type: ignore
         self.rr_main_dur_comboBox.activated.connect(self.rr_division_enabled)
         self.rr_reset_button.clicked.connect(self.rr_reset)
-        self.ir_generate_radioButton.toggled['bool'].connect(self.ir_generator_groupBox.setEnabled)  # type: ignore
-        self.ir_rests_checkBox.clicked['bool'].connect(self.ir_rests_groupBox.setEnabled)  # type: ignore
-        self.ir_generate_radioButton.toggled['bool'].connect(self.ir_generate_button.setEnabled)  # type: ignore
-        self.ir_create_radioButton.toggled['bool'].connect(self.ir_create_button.setEnabled)  # type: ignore
-        self.ir_create_radioButton.toggled['bool'].connect(self.ir_get_from_excel_button.setEnabled)  # type: ignore
-        self.ir_single_time_sig_checkBox.clicked['bool'].connect(self.ir_time_sig_groupBox.setEnabled)  # type: ignore
-        self.ir_single_time_sig_checkBox.clicked['bool'].connect(
-            self.ir_time_sig_den_spinBox.setDisabled)  # type: ignore
-        self.ir_single_time_sig_checkBox.clicked['bool'].connect(self.ir_time_sig_den_label.setDisabled)  # type: ignore
+        self.ir_generate_radioButton.toggled['bool'].connect(self.ir_generator_groupBox.setEnabled) # type: ignore
+        self.ir_rests_checkBox.clicked['bool'].connect(self.ir_rests_groupBox.setEnabled) # type: ignore
+        self.ir_generate_radioButton.toggled['bool'].connect(self.ir_generate_button.setEnabled) # type: ignore
+        self.ir_create_radioButton.toggled['bool'].connect(self.ir_get_from_excel_button.setEnabled) # type: ignore
+        self.ir_single_time_sig_checkBox.clicked['bool'].connect(self.ir_time_sig_groupBox.setEnabled) # type: ignore
+        self.ir_single_time_sig_checkBox.clicked['bool'].connect(self.ir_time_sig_den_spinBox.setDisabled) # type: ignore
+        self.ir_single_time_sig_checkBox.clicked['bool'].connect(self.ir_time_sig_den_label.setDisabled) # type: ignore
         self.ir_create_radioButton.clicked.connect(self.ir_time_sig_enabled)
         self.ir_reset_button.clicked.connect(self.ir_reset)
-        self.pr_rests_checkBox.clicked['bool'].connect(self.pr_rests_groupBox.setEnabled)  # type: ignore
-        self.pr_place_points_radioButton.toggled['bool'].connect(
-            self.pr_place_points_groupBox.setEnabled)  # type: ignore
+        self.pr_rests_checkBox.clicked['bool'].connect(self.pr_rests_groupBox.setEnabled) # type: ignore
+        self.pr_place_points_radioButton.toggled['bool'].connect(self.pr_place_points_groupBox.setEnabled) # type: ignore
         self.pr_place_points_radioButton.toggled['bool'].connect(self.pr_time_sig_enabled)
-        self.pr_gen_rand_ph_radioButton.toggled['bool'].connect(
-            self.pr_rand_phase_gen_groupBox.setEnabled)  # type: ignore
-        self.pr_diff_time_sig_checkBox.clicked['bool'].connect(self.pr_num_of_bars_label.setDisabled)  # type: ignore
-        self.pr_diff_time_sig_checkBox.clicked['bool'].connect(self.pr_num_of_bars_spinBox.setDisabled)  # type: ignore
-        self.pr_diff_time_sig_checkBox.clicked['bool'].connect(self.pr_time_sig_groupBox.setDisabled)  # type: ignore
-        self.pr_diff_time_sig_checkBox.clicked['bool'].connect(self.pr_time_sig_lst_label.setEnabled)  # type: ignore
-        self.pr_diff_time_sig_checkBox.clicked['bool'].connect(self.pr_time_sig_lst_lineEdit.setEnabled)  # type: ignore
-        self.pr_gen_rand_ph_radioButton.toggled['bool'].connect(self.pr_generate_button.setEnabled)  # type: ignore
-        self.pr_place_points_radioButton.toggled['bool'].connect(self.pr_generate_button.setEnabled)  # type: ignore
+        self.pr_gen_rand_ph_radioButton.toggled['bool'].connect(self.pr_rand_phase_gen_groupBox.setEnabled) # type: ignore
+        self.pr_diff_time_sig_checkBox.clicked['bool'].connect(self.pr_num_of_bars_label.setDisabled) # type: ignore
+        self.pr_diff_time_sig_checkBox.clicked['bool'].connect(self.pr_num_of_bars_spinBox.setDisabled) # type: ignore
+        self.pr_diff_time_sig_checkBox.clicked['bool'].connect(self.pr_time_sig_groupBox.setDisabled) # type: ignore
+        self.pr_diff_time_sig_checkBox.clicked['bool'].connect(self.pr_time_sig_lst_label.setEnabled) # type: ignore
+        self.pr_diff_time_sig_checkBox.clicked['bool'].connect(self.pr_time_sig_lst_lineEdit.setEnabled) # type: ignore
+        self.pr_gen_rand_ph_radioButton.toggled['bool'].connect(self.pr_generate_button.setEnabled) # type: ignore
+        self.pr_place_points_radioButton.toggled['bool'].connect(self.pr_generate_button.setEnabled) # type: ignore
         self.pr_reset_button.clicked.connect(self.pr_reset)
         self.pe_reset_button.clicked.connect(self.pe_reset)
         QtCore.QMetaObject.connectSlotsByName(TabWidget)
@@ -539,7 +531,6 @@ class Ui_TabWidget(object):
         self.ir_rests_checkBox.setText(_translate("TabWidget", "Add rests"))
         self.ir_reset_button.setText(_translate("TabWidget", "Reset"))
         self.ir_generate_button.setText(_translate("TabWidget", "Generate"))
-        self.ir_create_button.setText(_translate("TabWidget", "Create"))
         self.ir_get_from_excel_button.setText(_translate("TabWidget", "Get from Excel"))
         self.ir_operation_groupBox.setTitle(_translate("TabWidget", "Operation"))
         self.ir_create_radioButton.setText(_translate("TabWidget", "Create"))
@@ -661,7 +652,6 @@ class Ui_TabWidget(object):
         self.ir_op_radiobuttonGroup.setExclusive(True)
         self.ir_generator_groupBox.setEnabled(False)
         self.ir_generate_button.setEnabled(False)
-        self.ir_create_button.setEnabled(False)
         self.ir_get_from_excel_button.setEnabled(False)
         self.ir_time_sig_groupBox.setEnabled(False)
         self.ir_time_sig_den_label.setEnabled(True)
@@ -713,13 +703,3 @@ class Ui_TabWidget(object):
         self.pe_num_of_bars_spinBox.setValue(0)
         self.pe_num_of_staves_spinBox.setValue(0)
         self.pe_durs_of_ev_lineEdit.clear()
-
-
-if __name__ == "__main__":
-    import sys
-    app = QtWidgets.QApplication(sys.argv)
-    TabWidget = QtWidgets.QTabWidget()
-    ui = Ui_TabWidget()
-    ui.setupUi(TabWidget)
-    TabWidget.show()
-    sys.exit(app.exec_())
